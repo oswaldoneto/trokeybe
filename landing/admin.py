@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from landing.models import Registro, Anuncio
 
 
@@ -7,7 +8,8 @@ class VendoAdmin(admin.TabularInline):
 
 
 class RegistroAdmin(admin.ModelAdmin):
-    inlines = [VendoAdmin,]
+    list_display = ('nome', 'telefone', 'email',)
+    inlines = [VendoAdmin, ]
 
 
 admin.site.register(Registro, RegistroAdmin)

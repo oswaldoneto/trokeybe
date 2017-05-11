@@ -18,7 +18,7 @@ class Anuncio(models.Model):
     tipo = models.CharField(max_length=1, choices=TIPO)
     marca = models.CharField(max_length=100)
     modelo = models.CharField(max_length=100)
-    ano = models.IntegerField()
+    ano = models.CharField(max_length=10)
     valor = models.CharField(max_length=100)
 
 
