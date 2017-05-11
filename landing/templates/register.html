@@ -32,8 +32,8 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right"></ul>
                 <ul class="nav navbar-nav">
-                    <li class="active" role="presentation"><a href="/landing/register">Trocar Meu Carro</a></li>
-                    <li class="active" role="presentation"><a href="#">Como Funciona</a></li>
+                    <li class="active" role="presentation" id="register-link"><a href="">Trocar Meu Carro</a></li>
+                    <li class="active" role="presentation" id="como-funciona-link"><a href="">Como Funciona</a></li>
                 </ul>
             </div>
         </div>
@@ -163,6 +163,15 @@
 <script src="{% static 'js/sweetalert.min.js' %}"></script>
 <script>
     $(document).ready(function () {
+
+        $('#register-link').click(function(){
+            location.href = '/landing/register';
+        });
+
+        $('#como-funciona-link').click(function(){
+            location.href = '/landing/index';
+        });
+
 
         $('#id_telefone').inputmask({
             mask: ['(99) 9999-9999', '(99) 99999-9999',],
