@@ -47,7 +47,7 @@
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right"></ul>
                     <ul class="nav navbar-nav">
-                        <li class="active" role="presentation" id="como-funciona-link"><a>Como Funciona</a></li>
+                        <li class="active" role="presentation" id="como-funciona-link"><a href="">Como Funciona</a></li>
                         <li class="active" role="presentation" id="register-link"><a>Trocar Meu Carro</a></li>
                     </ul>
                 </div>
@@ -132,7 +132,7 @@
             </div>
         </div>
     </div>
-    <div class="features-clean" style="color:#313437;background-color:#eef4f7;">
+    <div class="features-clean" style="color:#313437;background-color:#eef4f7;" id="trokey-video">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">ENTENDA A TROKEY</h2>
@@ -162,7 +162,7 @@
         });
 
         $('#como-funciona-link').click(function(){
-            location.href = '';
+            location.href = '#trokey-video';
         });
 
         {% if registered == 'true'  %}
