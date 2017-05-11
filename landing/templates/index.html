@@ -37,20 +37,18 @@
 
 <body>
 
-
-
     <div>
         <nav class="navbar navbar-default navigation-clean" style="text-align:center;">
             <div class="container" style="text-align:center!important;">
                 <div class="navbar-header">
-                    <a class="navbar-brand navbar-link" href="index.html" style="text-align:center;padding:10px;"><img src="{% static 'img/logo.png' %}" style="height:24px!important;"></a>
+                    <a class="navbar-brand navbar-link" href="/" style="text-align:center;padding:10px;"><img src="{% static 'img/logo.png' %}" style="height:24px!important;"></a>
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right"></ul>
                     <ul class="nav navbar-nav">
-                        <li class="active" role="presentation" id="register-link"><a href="">Trocar Meu Carro</a></li>
-                        <li class="active" role="presentation" id="como-funciona-link"><a href="">Como Funciona</a></li>
+                        <li class="active" role="presentation" id="como-funciona-link"><a>Como Funciona</a></li>
+                        <li class="active" role="presentation" id="register-link"><a>Trocar Meu Carro</a></li>
                     </ul>
                 </div>
             </div>
@@ -115,7 +113,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6 item">
                     <div class="box">
-                        <p class="description">Não aguentava mais as margens absurdas que os garagistas e concessionárias praticam no carro semi-novo. Trokey motors nota 10!!&nbsp; </p>
+                        <p class="description">Não aguentava mais as margens absurdas que os garagistas e concessionárias praticam no carro semi-novo. Trokey motors nota 10!!<br>&nbsp; </p>
                     </div>
                     <div class="author"><img class="img-circle" src="{% static 'img/3.jpg' %}">
                         <h5 class="name">Juliano Karam </h5>
@@ -127,7 +125,7 @@
                         <p class="description">Antes era muito dificil ter que ir em 5 ou 6 garagens para conseguir encontrar um carro que fosse interresante com Trokey fa'co isso em apenas alguns minutos </p>
                     </div>
                     <div class="author"><img class="img-circle" src="{% static 'img/2.jpg' %}">
-                        <h5 class="name">Adriano Lupo Stella </h5>
+                        <h5 class="name">Adriana Lupo Stella </h5>
                         <p class="title">Araraquara - SP </p>
                     </div>
                 </div>
@@ -156,7 +154,6 @@
 <script src="{% static 'js/jquery.maskMoney.min.js' %}"></script>
 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/sweetalert.min.js' %}"></script>
-
 <script>
     $(document).ready(function () {
 
