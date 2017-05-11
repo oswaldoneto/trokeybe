@@ -31,10 +31,10 @@ class RegistroView(FormView):
 
         registro = Registro.objects.create(nome=nome, email=email, telefone=telefone)
 
-        venda = Anuncio.objects.create(marca=marca_vender, modelo=modelo_vender, ano=ano_vender, valor=valor_vender,
+        Anuncio.objects.create(marca=marca_vender, modelo=modelo_vender, ano=ano_vender, valor=valor_vender,
                                        tipo=Anuncio.VENDER, registro=registro)
 
-        compra = Anuncio.objects.create(marca=marca_comprar, modelo=modelo_comprar, ano=ano_comprar,
+        Anuncio.objects.create(marca=marca_comprar, modelo=modelo_comprar, ano=ano_comprar,
                                         valor=valor_comprar, tipo=Anuncio.COMPRAR, registro=registro)
 
         return super(RegistroView, self).form_valid(form)
