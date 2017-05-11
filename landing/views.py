@@ -9,11 +9,17 @@ from landing.models import Registro, Anuncio
 class IndexView(TemplateView):
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context.update({'registered': self.request.GET['registered'] if 'registered' in self.request.GET else 'false'})
+        return context
+
+
 
 class RegistroView(FormView):
     template_name = 'register.html'
     form_class = RegistroForm
-    success_url = '/landing/index?register=success'
+    success_url = '/landing/index?registered=true'
 
     def form_valid(self, form):
 

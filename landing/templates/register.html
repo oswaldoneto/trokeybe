@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="{% static 'css/user.css' %}   ">
     <link rel="stylesheet" href="{% static 'css/Features-Clean.css' %}   ">
     <link rel="stylesheet" href="{% static 'css/Navigation-Clean1.css' %}   ">
-    <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}           ">
+    <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}">
     <link rel="stylesheet" href="{% static 'css/Testimonials.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sweetalert.css' %}">
 </head>
 
 <body>
@@ -31,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right"></ul>
                 <ul class="nav navbar-nav">
-                    <li class="active" role="presentation"><a href="#">Trocar Meu Carro</a></li>
+                    <li class="active" role="presentation"><a href="/landing/register">Trocar Meu Carro</a></li>
                     <li class="active" role="presentation"><a href="#">Como Funciona</a></li>
                 </ul>
             </div>
@@ -75,34 +76,41 @@
 
             <h2 class="text-center">Dados<strong> Pessoais</strong></h2>
             <div class="form-group">
-                <input class="form-control" name="nome" type="text" value="{{ form.nome.value }}"
+                <input class="form-control" name="nome" type="text"
+                       value="{% if form.nome.value %}{{ form.nome.value }}{% endif %}"
                        placeholder="Nome Completo">
             </div>
             <div class="form-group">
-                <input class="form-control" id="id_telefone" name="telefone" value="{{ form.telefone.value }}"
+                <input class="form-control" id="id_telefone" name="telefone"
+                       value="{% if form.telefone.value %}{{ form.telefone.value }}{% endif %}"
                        type="text" placeholder="Telefone">
             </div>
             <div class="form-group">
-                <input class="form-control" name="email" type="email" value="{{ form.email.value }}"
+                <input class="form-control" name="email" type="email"
+                       value="{% if form.email.value %}{{ form.email.value }}{% endif %}"
                        placeholder="E-mail">
             </div>
 
             <h2 class="text-center"><strong>Meu</strong> Carro</h2>
             <div class="form-group">
                 <input class="form-control" id="id_valor_vender" name="valor_vender"
-                       value="{{ form.valor_vender.value }}" type="text" placeholder="Valor"
+                       value="{% if form.valor_vender.value %}{{ form.valor_vender.value }}{% endif %}" type="text"
+                       placeholder="Valor"
                        size="12">
             </div>
             <div class="form-group">
-                <input class="form-control" name="marca_vender" type="text" value="{{ form.marca_vender.value }}"
+                <input class="form-control" name="marca_vender" type="text"
+                       value="{% if form.marca_vender.value %}{{ form.marca_vender.value }}{% endif %}"
                        placeholder="Marca">
             </div>
             <div class="form-group">
-                <input class="form-control" name="modelo_vender" type="text" value="{{ form.modelo_vender.value }}"
+                <input class="form-control" name="modelo_vender" type="text"
+                       value="{% if form.modelo_vender.value %}{{ form.modelo_vender.value }}{% endif %}"
                        placeholder="Modelo">
             </div>
             <div class="form-group">
-                <input class="form-control" id="id_ano_vender" name="ano_vender" value="{{ form.ano_vender.value }}"
+                <input class="form-control" id="id_ano_vender" name="ano_vender"
+                       value="{% if form.ano_vender.value %}{{ form.ano_vender.value }}{% endif %}"
                        type="text" placeholder="Ano"
                        size="10">
             </div>
@@ -110,19 +118,23 @@
             <h2 class="text-center">Carro que <strong>Desejo</strong></h2>
             <div class="form-group">
                 <input class="form-control" id="id_valor_compra" name="valor_comprar"
-                       value="{{ form.valor_comprar.value }}" type="text" placeholder="Valor"
+                       value="{% if form.valor_comprar.value %}{{ form.valor_comprar.value }}{% endif %}" type="text"
+                       placeholder="Valor"
                        size="12">
             </div>
             <div class="form-group">
-                <input class="form-control" name="marca_comprar" type="text" value="{{ form.marca_comprar.value }}"
+                <input class="form-control" name="marca_comprar" type="text"
+                       value="{% if form.marca_comprar.value %}{{ form.marca_comprar.value }}{% endif %}"
                        placeholder="Marca">
             </div>
             <div class="form-group">
-                <input class="form-control" name="modelo_comprar" type="text" value="{{ form.modelo_comprar.value }}"
+                <input class="form-control" name="modelo_comprar" type="text"
+                       value="{% if form.modelo_comprar.value %}{{ form.modelo_comprar.value }}{% endif %}"
                        placeholder="Modelo">
             </div>
             <div class="form-group">
-                <input class="form-control" id="id_ano_comprar" name="ano_comprar" value="{{ form.ano_comprar.value }}"
+                <input class="form-control" id="id_ano_comprar" name="ano_comprar"
+                       value="{% if form.ano_comprar.value %}{{ form.ano_comprar.value }}{% endif %}"
                        type="text" placeholder="Ano">
             </div>
 
@@ -148,6 +160,7 @@
 <script src="{% static 'js/jquery.inputmask.bundle.min.js' %}"></script>
 <script src="{% static 'js/jquery.maskMoney.min.js' %}"></script>
 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/sweetalert.min.js' %}"></script>
 <script>
     $(document).ready(function () {
 

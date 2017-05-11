@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic.base import RedirectView
 from rest_framework import serializers, viewsets, routers
 
 from landing.models import Registro
@@ -34,10 +35,16 @@ class RegisterViewSet(viewsets.ModelViewSet):
 router = routers.DefaultRouter()
 router.register(r'register', RegisterViewSet)
 
+class HomeView(RedirectView):
+    def get_redirect_url(self, *args, **kwargs):
+        return '/landing/index'
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #url(r'^', include(router.urls)),
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^landing/', include('landing.urls')),
+    url(r'^$', HomeView.as_view()),
+
 ]

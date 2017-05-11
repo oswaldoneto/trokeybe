@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="{% static 'css/user.css' %}   ">
     <link rel="stylesheet" href="{% static 'css/Features-Clean.css' %}   ">
     <link rel="stylesheet" href="{% static 'css/Navigation-Clean1.css' %}   ">
-    <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}           ">
+    <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}">
     <link rel="stylesheet" href="{% static 'css/Testimonials.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sweetalert.css' %}">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right"></ul>
                     <ul class="nav navbar-nav">
-                        <li class="active" role="presentation"><a href="#">Trocar Meu Carro</a></li>
+                        <li class="active" role="presentation" id="register-link"><a href="">Trocar Meu Carro</a></li>
                         <li class="active" role="presentation"><a href="#">Como Funciona</a></li>
                     </ul>
                 </div>
@@ -132,8 +133,26 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery.inputmask.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery.maskMoney.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/sweetalert.min.js' %}"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $('#register-link').click(function(){
+            location.href = '/landing/register'
+        });
+
+        {% if registered == 'true'  %}
+            swal("Obrigado por se cadastrar", "Entraremos em contato assim que tivermos uma oferta de troca para você!", "success")
+        {% endif %}
+
+
+    });
+</script>
 </body>
 
 </html>

@@ -2,6 +2,7 @@ from django import forms
 
 
 class RegistroForm(forms.Form):
+
     nome = forms.CharField(required=True)
     email = forms.CharField(required=False)
     telefone = forms.CharField(required=True)
