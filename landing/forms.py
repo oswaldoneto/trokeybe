@@ -39,3 +39,10 @@ class RegistroForm(forms.Form):
                 valor_comprar) > 0
             if not bloco_comprar_valido:
                 raise forms.ValidationError('Preencha os dados do carro que deseja ou deixe os campos em branco.')
+
+        if len(marca_vender) == 0 and len(modelo_vender) == 0 and len(ano_vender) == 0 and len(
+                valor_vender) == 0 and len(marca_comprar) == 0 and len(modelo_comprar) == 0 and len(
+            ano_comprar) == 0 and len(
+            valor_comprar) == 0:
+            raise forms.ValidationError(
+                'Você precisa preencher os dados do seu carro, do carro que deseja ou de ambos para continuar')
