@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}">
     <link rel="stylesheet" href="{% static 'css/Testimonials.css' %}">
     <link rel="stylesheet" href="{% static 'css/sweetalert.css' %}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 
 <body>
@@ -99,7 +100,7 @@
                        size="12">
             </div>
             <div class="form-group">
-                <input class="form-control" name="marca_vender" type="text"
+                <input class="form-control" id="id_marca_vender" name="marca_vender" type="text"
                        value="{% if form.marca_vender.value %}{{ form.marca_vender.value }}{% endif %}"
                        placeholder="Marca">
             </div>
@@ -123,7 +124,7 @@
                        size="12">
             </div>
             <div class="form-group">
-                <input class="form-control" name="marca_comprar" type="text"
+                <input class="form-control" id="id_marca_comprar" name="marca_comprar" type="text"
                        value="{% if form.marca_comprar.value %}{{ form.marca_comprar.value }}{% endif %}"
                        placeholder="Marca">
             </div>
@@ -161,14 +162,16 @@
 <script src="{% static 'js/jquery.maskMoney.min.js' %}"></script>
 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/sweetalert.min.js' %}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script>
     $(document).ready(function () {
 
-        $('#register-link').click(function(){
+        $('#register-link').click(function () {
             location.href = '/landing/register';
         });
 
-        $('#como-funciona-link').click(function(){
+        $('#como-funciona-link').click(function () {
             location.href = '/landing/index';
         });
 
@@ -191,6 +194,27 @@
             mask: ['9999', '9999/9999',],
             keepStatic: true
         });
+
+
+
+
+        var todas_marcar = [];
+        $.get('https://fipe-parallelum.rhcloud.com/api/v1/carros/marcas', function(data){
+            $.each(data, function (key, value) {
+                todas_marcar.push(value.nome);
+            })
+        });
+
+
+        $("#id_marca_vender").autocomplete({
+            source: todas_marcar
+        });
+
+        $("#id_marca_comprar").autocomplete({
+            source: todas_marcar
+        });
+
+
     });
 </script>
 </body>
