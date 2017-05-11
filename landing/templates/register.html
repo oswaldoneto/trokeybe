@@ -52,7 +52,7 @@
 
                 <h2 class="text-center"><strong>Meu</strong> Carro</h2>
                 <div class="form-group">
-                    <input class="form-control" name="valor_vender" type="text" placeholder="Valor">
+                    <input class="form-control" id="id_valor_vender" name="valor_vender" type="text" placeholder="Valor">
                 </div>
                 <div class="form-group">
                     <input class="form-control" name="marca_vender" type="text" placeholder="Marca">
@@ -66,7 +66,7 @@
 
                 <h2 class="text-center">Carro que <strong>Desejo</strong></h2>
                 <div class="form-group">
-                    <input class="form-control" name="valor_comprar" type="text" placeholder="Valor" size="10">
+                    <input class="form-control" id="id_valor_compra" name="valor_comprar" type="text" placeholder="Valor" size="10">
                 </div>
                 <div class="form-group">
                     <input class="form-control" name="marca_comprar" type="text" placeholder="Marca">
@@ -95,13 +95,20 @@
     </footer>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/jquery.inputmask.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery.maskMoney.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script>
         $(document).ready(function () {
+
             $('#id_telefone').inputmask({
                 mask: ['(99) 9999-9999','(99) 99999-9999',],
                 keepStatic: true
             });
+
+            $('#id_valor_vender').maskMoney({thousands:'.', decimal:','});
+
+            $('#id_valor_compra').maskMoney({thousands:'.', decimal:','});
+
         });
     </script>
 </body>
