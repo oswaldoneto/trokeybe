@@ -15,7 +15,7 @@
     <meta property="og:title" content="Troque seu Carro sem Perder Dinheiro">
     <meta property="og:site_name" content="TROKEY.COM.BR">
     <meta property="og:description" content="Valorize seu carro fazendo uma troca justa e sem perder tempo.">
-    <meta property="og:image" content="{% static 'img/facebook1.jpg' %}">
+    <meta property="og:image" content="{{ request.META.HTTP_HOST }}/static/img/facebook1.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <!--
     <meta property="og:image:width" content="1200">
@@ -35,6 +35,9 @@
 </head>
 
 <body>
+
+
+
     <div>
         <nav class="navbar navbar-default navigation-clean" style="text-align:center;">
             <div class="container" style="text-align:center!important;">
