@@ -42,7 +42,7 @@
 </div>
 <div class="register-photo">
     <div class="form-container">
-        <form method="post" action="/landing/register">
+        <form method="post" action="/register">
             {% csrf_token %}
 
 
@@ -168,11 +168,11 @@
     $(document).ready(function () {
 
         $('#register-link').click(function () {
-            location.href = '/landing/register';
+            location.href = '/register';
         });
 
         $('#como-funciona-link').click(function () {
-            location.href = '/landing/index';
+            location.href = '/';
         });
 
 
