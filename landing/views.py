@@ -12,7 +12,7 @@ class IndexView(TemplateView):
 class RegistroView(FormView):
     template_name = 'register.html'
     form_class = RegistroForm
-    success_url = '/register'
+    success_url = '/landing/index?register=success'
 
     def form_valid(self, form):
         nome = form.cleaned_data['nome']
