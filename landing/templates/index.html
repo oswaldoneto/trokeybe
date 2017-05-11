@@ -15,9 +15,9 @@
     <meta property="og:title" content="Troque seu Carro sem Perder Dinheiro">
     <meta property="og:site_name" content="TROKEY.COM.BR">
     <meta property="og:description" content="Valorize seu carro fazendo uma troca justa e sem perder tempo.">
-    <!--
     <meta property="og:image" content="{% static 'img/facebook1.jpg' %}">
     <meta property="og:image:type" content="image/jpeg">
+    <!--
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
     -->
@@ -58,7 +58,7 @@
                 <div class="col-lg-5 col-md-5 col-sm-5 get-it"><img src="{% static 'img/logo.png' %}" style="height:79px!important;">
                     <h1></h1>
                     <p style="font-weight:bold;">Valorize seu carro fazendo uma troca justa e sem perder tempo.</p>
-                    <p><a class="btn btn-primary btn-lg" role="button" href="register.html" style="background-color:rgb(247,120,107);border:rgb(247,120,107);">COMECE AGORA MESMO</a></p>
+                    <p><a class="btn btn-primary btn-lg" role="button" href="/register" style="background-color:rgb(247,120,107);border:rgb(247,120,107);">COMECE AGORA MESMO</a></p>
                 </div>
                 <div class="col-lg-7 col-lg-offset-0 col-md-7 phone-preview" style="height:100%;">
                     <div class="iphone-mockup"><img src="{% static 'img/carro.png' %}" class="device" style="width:500px;"></div>
@@ -157,11 +157,11 @@
     $(document).ready(function () {
 
         $('#register-link').click(function(){
-            location.href = '/landing/register';
+            location.href = '/register';
         });
 
         $('#como-funciona-link').click(function(){
-            location.href = '/landing/index';
+            location.href = '';
         });
 
         {% if registered == 'true'  %}

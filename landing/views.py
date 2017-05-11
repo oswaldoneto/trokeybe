@@ -19,7 +19,7 @@ class IndexView(TemplateView):
 class RegistroView(FormView):
     template_name = 'register.html'
     form_class = RegistroForm
-    success_url = '/landing/index?registered=true'
+    success_url = '/?registered=true'
 
     def form_valid(self, form):
 
