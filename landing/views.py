@@ -1,6 +1,7 @@
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 
+from landing import forms
 from landing.forms import RegistroForm
 from landing.models import Registro, Anuncio
 
@@ -15,6 +16,10 @@ class RegistroView(FormView):
     success_url = '/landing/index?register=success'
 
     def form_valid(self, form):
+
+        cleaned_data = super(RegistroView, self).form_valid(form)
+
+
         nome = form.cleaned_data['nome']
         email = form.cleaned_data['email']
         telefone = form.cleaned_data['telefone']
@@ -37,4 +42,6 @@ class RegistroView(FormView):
         Anuncio.objects.create(marca=marca_comprar, modelo=modelo_comprar, ano=ano_comprar,
                                         valor=valor_comprar, tipo=Anuncio.COMPRAR, registro=registro)
 
-        return super(RegistroView, self).form_valid(form)
+        return cleaned_data
+
+
