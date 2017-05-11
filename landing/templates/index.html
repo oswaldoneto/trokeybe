@@ -1,0 +1,139 @@
+
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}   ">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}   ">
+    <link rel="stylesheet" href="{% static 'css/Features-Clean.css' %}   ">
+    <link rel="stylesheet" href="{% static 'css/Navigation-Clean1.css' %}   ">
+    <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}           ">
+    <link rel="stylesheet" href="{% static 'css/Testimonials.css' %}">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-default navigation-clean" style="text-align:center;">
+            <div class="container" style="text-align:center!important;">
+                <div class="navbar-header">
+                    <a class="navbar-brand navbar-link" href="index.html" style="text-align:center;padding:10px;"><img src="{% static 'img/logo.png' %}" style="height:24px!important;"></a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right"></ul>
+                    <ul class="nav navbar-nav">
+                        <li class="active" role="presentation"><a href="#">Trocar Meu Carro</a></li>
+                        <li class="active" role="presentation"><a href="#">Como Funciona</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="jumbotron hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-5 get-it"><img src="{% static 'img/logo.png' %}" style="height:79px!important;">
+                    <h1></h1>
+                    <p style="font-weight:bold;">Valorize seu carro fazendo uma troca justa e sem perder tempo.</p>
+                    <p><a class="btn btn-primary btn-lg" role="button" href="register.html" style="background-color:rgb(247,120,107);border:rgb(247,120,107);">COMECE AGORA MESMO</a></p>
+                </div>
+                <div class="col-lg-7 col-lg-offset-0 col-md-7 phone-preview" style="height:100%;">
+                    <div class="iphone-mockup"><img src="{% static 'img/carro.png' %}" class="device" style="width:500px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="testimonials">
+        <h2 class="text-center">Encontre aqui seu novo carro!</h2>
+        <blockquote>
+            <p>Aqui voce nao vai perder dinheiro na troca seu carro usado, nos eliminamos o intermediario e conectamos voce direto ao seu novo carro.</p>
+            <footer>Marcos Oliveira</footer>
+        </blockquote>
+    </section>
+    <div class="features-clean" style="color:#313437;background-color:#eef4f7;">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">TROQUE SEU CARRO EM APENAS 3 PASSOS</h2></div>
+            <div class="row features">
+                <div class="col-md-4 col-sm-12 item"><i class="glyphicon glyphicon-search icon"></i>
+                    <h3 class="name">Encontre e seja Encontrado</h3>
+                    <p class="description">Encontre alguem que tenha o carro que você quer e que aceite o que você tem. </p>
+                </div>
+                <div class="col-md-4 col-sm-11 item"><i class="glyphicon glyphicon-time icon"></i>
+                    <h3 class="name">Agende o Encontro</h3>
+                    <p class="description">Agendaremos um encontro entre as partes e um agente Trokey para auxiliarmos nos detalhes da transação. </p>
+                </div>
+                <div class="col-md-4 col-sm-12 item"><i class="fa fa-random icon"></i>
+                    <h3 class="name">Saia de carro "NOVO"</h3>
+                    <p class="description">Voce acabou de economizar em media 30% na troca do seu veiculo semi-novo. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Testimonials </h2>
+                <p class="text-center">Our customers love us! Read what they have to say below. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+            </div>
+            <div class="row people">
+                <div class="col-md-4 col-sm-6 item">
+                    <div class="box">
+                        <p class="description">Troquei meu carro por um 2 anos a cima em menos de 24 horas e sai completamente satisfeito com o resultado. Recomendo Fortemente! </p>
+                    </div>
+                    <div class="author"><img class="img-circle" src="{% static 'img/1.jpg' %}">
+                        <h5 class="name">Gabriel Cantarin </h5>
+                        <p class="title">Ibitinga - SP </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 item">
+                    <div class="box">
+                        <p class="description">Não aguentava mais as margens absurdas que os garagistas e concessionárias praticam no carro semi-novo. Trokey motors nota 10!!&nbsp; </p>
+                    </div>
+                    <div class="author"><img class="img-circle" src="{% static 'img/3.jpg' %}">
+                        <h5 class="name">Juliano Karam </h5>
+                        <p class="title">Arararaquara - SP </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 item">
+                    <div class="box">
+                        <p class="description">Antes era muito dificil ter que ir em 5 ou 6 garagens para conseguir encontrar um carro que fosse interresante com Trokey fa'co isso em apenas alguns minutos </p>
+                    </div>
+                    <div class="author"><img class="img-circle" src="{% static 'assets/img/2.jpg' %}">
+                        <h5 class="name">Adriano Lupo Stella </h5>
+                        <p class="title">Araraquara - SP </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="features-clean" style="color:#313437;background-color:#eef4f7;">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">ENTENDA A TROKEY</h2>
+                <video width="560" height="315" controls=""></video>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer" style="/*color:#313437;*//*background-color:#eef4f7;*/border-top:1px solid #eee;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5><img src="{% static 'img/logo.png' %}" style="height:19px!important;margin-bottom:7px!important;"> © 2017</h5></div>
+                <div class="col-sm-6 social-icons"><a href="#"><i class="fa fa-facebook"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
