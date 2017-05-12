@@ -32,6 +32,14 @@
   color:#222;
 }
 
+.nav.navbar-nav > li {
+  cursor: pointer;
+}
+
+.nav.navbar-nav > li:hover {
+   text-shadow: black 0.5px 0.5px;
+}
+
 .navigation-clean.navbar-inverse .navbar-brand:hover {
   color:#f0f0f0;
 }

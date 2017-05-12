@@ -44,6 +44,10 @@
   text-shadow:none;
 }
 
+.btn:hover {
+  margin-top: 0px !important;
+}
+
 div.iphone-mockup {
   position:relative;
   max-width:250px;
