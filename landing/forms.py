@@ -18,6 +18,10 @@ class RegistroForm(forms.Form):
     def clean(self):
         cleaned_data = super(RegistroForm, self).clean()
 
+        telefone = cleaned_data.get('telefone')
+        if telefone and len(telefone) < 14:
+            raise forms.ValidationError('Número de telefone inválido.')
+
         marca_vender = cleaned_data.get('marca_vender')
         modelo_vender = cleaned_data.get('modelo_vender')
         ano_vender = cleaned_data.get('ano_vender')

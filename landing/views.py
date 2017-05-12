@@ -3,6 +3,7 @@ from django.views.generic.edit import FormView
 
 from landing import forms
 from landing.forms import RegistroForm
+from landing.mailing import send_welcome
 from landing.models import Registro, Anuncio
 
 
@@ -47,6 +48,8 @@ class RegistroView(FormView):
 
         Anuncio.objects.create(marca=marca_comprar, modelo=modelo_comprar, ano=ano_comprar,
                                         valor=valor_comprar, tipo=Anuncio.COMPRAR, registro=registro)
+
+        send_welcome(email, nome)
 
         return cleaned_data
 
