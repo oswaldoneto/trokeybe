@@ -49,7 +49,7 @@ class RegistroView(FormView):
         Anuncio.objects.create(marca=marca_comprar, modelo=modelo_comprar, ano=ano_comprar,
                                         valor=valor_comprar, tipo=Anuncio.COMPRAR, registro=registro)
 
-        send_welcome(email, nome)
+        #send_welcome(email, nome)
 
         return cleaned_data
 
